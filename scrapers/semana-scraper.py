@@ -2,8 +2,10 @@
 # Author: Manuel Davy Ntsoumou + Konrad von Klitzing
 
 import requests
+from IPython.display import display
 from bs4 import BeautifulSoup
 import pandas as pd
+import datetime
 
 # Get the html content of the page
 url = 'https://www.semana.com/nacion/'
@@ -26,7 +28,6 @@ for article in articles:
 
 # print(urls)
 
-
 information_list = []
 
 # get titles, subtitles, dates and contents for every article
@@ -45,10 +46,10 @@ for link in urls:
     
     #get date  
     date = soup.select(".pl-2.text-xs.leading-none")
-    print(date)
+    #print(date)
 
     content = []
-    paragraphs = soup.find_all('p')
+    paragraphs = soup.select(".max-w-screen-md p")
 
     for p in paragraphs:
         content.append(p.get_text())
@@ -62,8 +63,18 @@ for link in urls:
     }
 
 
-    # information_list.append(information)
-    # display(information)
+    information_list.append(information)
+    
 
     break
 
+df = pd.DataFrame(information_list)
+
+display(df)
+
+# Save the data in a csv file
+current_date = datetime.datetime.now()
+filename =  str(current_date.year) + '-' + str(current_date.month) + '-' + str(current_date.day) + '-' + 'semana'
+df.to_csv(str(filename + '.csv'))
+
+print("done!")
