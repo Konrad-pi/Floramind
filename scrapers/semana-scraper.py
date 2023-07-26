@@ -66,8 +66,6 @@ for link in urls:
     information_list.append(information)
     
 
-    break
-
 df = pd.DataFrame(information_list)
 
 display(df)
