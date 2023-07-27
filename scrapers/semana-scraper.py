@@ -37,15 +37,15 @@ for link in urls:
     soup = BeautifulSoup(r.text, 'html.parser')
     
     #get title
-    title = soup.select(".lg\:text-4xl")
+    title = soup.select_one(".lg\:text-4xl").get_text()
     #print(title)
 
     #get subtitle
-    subtitle = soup.select(".max-w-\[968px\] .mb-5")
+    subtitle = soup.select_one(".max-w-\[968px\] .mb-5").get_text()
     #print(subtitle)
     
     #get date  
-    date = soup.select(".pl-2.text-xs.leading-none")
+    date = soup.select_one(".pl-2.text-xs.leading-none").get_text()
     #print(date)
 
     content = []
