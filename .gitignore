@@ -1,2 +1,2 @@
 *.csv
-config.py
+LLM/config.py
