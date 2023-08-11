@@ -1,4 +1,6 @@
-# %%
+# Webscraper for https://cnnespanol.cnn.com/category/zona-andina/colombia/
+# Author: Manuel Davy Ntsoumou + Konrad von Klitzing
+
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -16,11 +18,22 @@ soup = BeautifulSoup(page.content, 'html.parser')
 # Get articles with the following attributes: .card-body
 articles = soup.find_all(class_="focusIndicatorDisplayBlock bbc-uk8dsi e1d658bg0")
 
-# Get the URL of every article on the page with attributes "a"
+# Set counter + article_max to limit the number of articles
+counter = 0
+article_max = 10
+
+# Get the URL of every article on the page with attributes a using pandas
 urls = []
-for article in articles[:10]:
+
+for article in articles:
+    # limit to 'article_max' articles
+    if counter == article_max:
+        break
+    
     url = article['href']
     urls.append(url)
+
+    counter += 1
     
 dates = []
 elements = soup.find_all(class_="bbc-16jlylf e1mklfmt0")
@@ -48,8 +61,8 @@ for index, link in enumerate(urls):
 
     information = {
         'date': dates[index],  # Use the corresponding date
-        'Link': urls[index],
-        'Website': 'BBC_Mundo',
+        'link': urls[index],
+        'website': 'BBC_Mundo',
         'title': title,
         'subtitle': subtitle,
         'content': content,

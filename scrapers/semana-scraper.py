@@ -21,24 +21,28 @@ articles = soup.find_all(class_='card-body')
 
 # Get the URL of every article on the page with attributes a using pandas
 urls = []
+
+# Set counter + article_max to limit the number of articles
+counter = 0
+article_max = 10
+
 for article in articles:
+    # limit to 'article_max' articles
+    if counter == article_max:
+        break
+    
     url = article.find('a')['href']
     urls.append(url)
+
+    counter += 1
 
 
 # print(urls)
 
 information_list = []
 
-# Set counter + article_max to limit the number of articles
-counter = 0
-article_max = 10
-
 # get titles, subtitles, dates and contents for every article
 for link in urls:
-    # limit to 'article_max' articles
-    if counter == article_max:
-        break
 
     r = requests.get("https://www.semana.com/" + link, headers=headers)
     soup = BeautifulSoup(r.text, 'html.parser')
@@ -64,15 +68,14 @@ for link in urls:
 
     information = {
     'date': date,
+    'link': "https://www.semana.com" + link,
     'title': title,
     'subtitle': subtitle,
     'content': content,
     }
 
 
-    information_list.append(information)
-    counter =+ 1
-    
+    information_list.append(information)    
 
 df = pd.DataFrame(information_list)
 
