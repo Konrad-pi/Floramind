@@ -48,10 +48,10 @@ for link in urls:
     soup = BeautifulSoup(r.text, 'html.parser')
 
     #get title
-    title = soup.find("h1").get_text()
+    title = soup.find("h1").get_text().strip()
     #print(title)
         
-    #get date  (COMPLICATED!)
+    # Get date  (COMPLICATED!)
     date = soup.find(class_='news__date')
     if date == None:
         date = soup.find(class_='storyfull__time')
@@ -64,20 +64,14 @@ for link in urls:
 
     # Extract the day, month, and year using regular expressions
     day, month, year = re.search(r'(\d+).+(\w+),\s+(\d+)', clean_date).groups()
-
-    # Split the 'date' variable at the first occurrence of a digit
-    split_date = re.split(r'\d', date, 1)
-
-    # Remove any extra whitespace and punctuation characters from the split result
-    clean_date = ''.join(split_date).strip(' ,-')
-
+    
     #get content from paragraphs
     content = []
     paragraphs = soup.select("p")
 
 # exclude the last paragraph, which is not part of the article
     for p in paragraphs[3:-1]:
-        content.append(p.get_text())
+        content.append(p.get_text().strip())
     
     information = {
     'date': clean_date,
