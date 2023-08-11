@@ -1,38 +1,31 @@
 # Floramind - Summer of Code 2023
 
 ## 🇩🇪 (DE):
-Floramind hat zum Ziel mithilfe von Open source LLMs Echtzeitinformationen über die Lage in Fremdsprachlichen Räumen zu erlangen. Im ersten Projekt, Petunia 0.1, wird mithilfe eines (oder mehrere) open source LLM ein Programm zu schreiben welches mehrere Artikel verschiedener Kolumbianischen Onlinemedien auf deutsch in einen Fließtext zusammenfasst, um einen Überblick über die aktuelle (politische) Lage im Land zu bekommen. Zu diesem Zweck ist das Projekt in drei Hauptteile unterteilt: (1) Erstellung eines Webcrapers, (2) Zusammenfassung und Übersetzung der in den Artikeln gefundenen Inhalte und (3) Erstellung eines Berichts in deutscher Sprache.
+Floramind ist ein innovatives GitHub-Projekt, das die Leistung von Open-Source-Sprachmodellen (LLMs) nutzt, um tägliche Updates aus fremdsprachlichen Umgebungen zu liefern. Als aktiver Teilnehmer an der 2023 Summer of Code Challenge ist es unsere Aufgabe, ein ausgeklügeltes Programm zu entwickeln, das Artikel aus prominenten kolumbianischen Online-Medienquellen extrahiert und zu zusammenhängenden Erzählungen synthetisiert. Das Projekt konzentriert sich in erster Linie darauf, einen umfassenden Überblick über die aktuelle (politische) Landschaft des Landes zu liefern. 
 
-Auf der Basis von Austausch mit lokalen Kontakten wurden die folgenden Medien ausgewählt:
-El Tiempo
-Semana
-Portafolio
-CNN en espanol
-BBC mundo
-El Pais (?) 
+Basierend auf aufschlussreichen Gesprächen mit lokalen Kontakten haben wir eine Reihe angesehener Medien-Websites als Datenquellen ausgewählt:
+* El Tiempo
+* Semana
+* BBC Mundo
 
-### Webscraper (WIP)
-Die Medien für den Webscraper werden mit Hilfe von Quellen vor Ort (HUMINT) identifiziert, die einzelnen Artikel zum Zeitpunkt der Anfrage werden dann mit einem Webscraper heruntergeladen und anschließend zusammengefasst und übersetzt.
+### Die Hauptziele von Floramind:
+1. Web-Scraping-Infrastruktur: Unter Verwendung der BeautifulSoup (bs4)-Bibliothek bauen wir eine robuste Web-Scraping-Infrastruktur zur systematischen Sammlung von Artikeln aus den ausgewählten kolumbianischen Online-Medienplattformen auf.
 
+2. Inhaltszusammenfassung und Übersetzung: Floramind wird die Leistungsfähigkeit von Open-Source-LLMs nutzen und einen fortschrittlichen Mechanismus zur Inhaltszusammenfassung und Übersetzung implementieren. Diese Technologie wird das Wesentliche eines jeden Artikels kurz und bündig zusammenfassen und so ein effizientes Verständnis ohne Sprachbarrieren ermöglichen.
 
-### Zusammenfassung (WIP)
-### Berichtserstellung (WIP)
+3. Deutschsprachige Berichterstattung: Ein zentraler Bestandteil des Projekts ist die Erstellung umfassender Berichte in deutscher Sprache. Diese Berichte werden die zusammengefassten Informationen zusammenfassen und eine wertvolle Ressource für deutschsprachige Interessengruppen darstellen, die Einblicke in die kolumbianische Wirtschaft suchen.
 
 ## 🇬🇧 (EN): 
-The goal of Floramind is to use open source LLMs to obtain real-time information about the situation in foreign language spaces. The first project, Petunia 0.1, will use one (or more) open source LLMs to write a program that summarizes several articles from different Colombian online media into a continuous text in order to get an overview of the current (political) situation in the country. To do so, the project is divided into three main parts: (1) building a webscraper, (2) summarising and translating the contents found within the articles, and (3) generating a report in German.
+Floramind is an innovative GitHub project that harnesses the power of open source Language Models (LLMs) to provide daily updates from foreign language environments. As an active participant in the 2023 Summer of Code Challenge, our mission is to develop a sophisticated program that extracts and synthesizes articles from prominent Colombian online media sources into cohesive narratives. The project primarily focuses on delivering a comprehensive overview of the current (political) landscape within the nation. 
 
-Based on conversations with local contacts we decided to use the following media websites: 
+Based on insightful conversations with local contacts, we have curated a set of reputable media websites for our data sources:
+* El Tiempo
+* Semana
+* BBC Mundo
 
-El Tiempo
-Semana
-Portafolio
-CNN en espanol
-BBC mundo
-El Pais (?) 
+### Key Objectives of Floramind:
+1. Web Scraping Infrastructure: Utilizing the BeautifulSoup (bs4) library, we are constructing a robust web scraping infrastructure for systematic article collection from the chosen Colombian online media platforms.
 
+2. Content Summarization and Translation: Leveraging the power of open source LLMs, Floramind will implement an advanced content summarization and translation mechanism. This technology will succinctly encapsulate the essence of each article, enabling efficient comprehension without language barriers.
 
-### Webscraper (WIP)
-The media for the webscraper are identified with the help of sources on the ground (HUMINT), the individual articles at the time of the request are then downloaded with a web scraper and then summarised and translated. 
-
-### Summarisation (WIP)
-### Report Generation (WIP)
+3. German Language Reporting: A pivotal component of the project involves generating comprehensive reports in German. These reports will encapsulate the synthesized information, offering a valuable resource for German-speaking stakeholders seeking insights into Colombia's contemporary political landscape.

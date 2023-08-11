@@ -30,8 +30,15 @@ for article in articles:
 
 information_list = []
 
+# Set counter + article_max to limit the number of articles
+counter = 0
+article_max = 10
+
 # get titles, subtitles, dates and contents for every article
 for link in urls:
+    # limit to 'article_max' articles
+    if counter == article_max:
+        break
 
     r = requests.get("https://www.semana.com/" + link, headers=headers)
     soup = BeautifulSoup(r.text, 'html.parser')
@@ -64,6 +71,7 @@ for link in urls:
 
 
     information_list.append(information)
+    counter =+ 1
     
 
 df = pd.DataFrame(information_list)

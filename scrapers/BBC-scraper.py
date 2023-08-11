@@ -2,6 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import datetime
 
 # Get the html content of the page
 url = 'https://www.bbc.com/mundo/topics/c404v5gz1rkt'
@@ -17,10 +18,10 @@ articles = soup.find_all(class_="focusIndicatorDisplayBlock bbc-uk8dsi e1d658bg0
 
 # Get the URL of every article on the page with attributes "a"
 urls = []
-
 for article in articles[:10]:
     url = article['href']
     urls.append(url)
+    
 dates = []
 elements = soup.find_all(class_="bbc-16jlylf e1mklfmt0")
 for element in elements[:10]:
@@ -59,10 +60,7 @@ for index, link in enumerate(urls):
 # Create a DataFrame from the information list
 df = pd.DataFrame(information_list)
 
-# Save the DataFrame to a CSV file
-df.to_csv('output.csv', index=False)
-
-
-
-
-
+# Save the data in a csv file
+current_date = datetime.datetime.now()
+filename =  str(current_date.year) + '-' + str(current_date.month) + '-' + str(current_date.day) + '-' + 'bbcmundo'
+df.to_csv(str(filename + '.csv'))

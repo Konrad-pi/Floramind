@@ -21,6 +21,7 @@ articles = soup.find_all(itemprop='headline')
 
 # Get the URL of every article on the page with attributes a using pandas
 urls = []
+
 for article in articles:
     url = article.find('a')['href']
     urls.append(url)
@@ -29,23 +30,27 @@ for article in articles:
 
 information_list = []
 
+# Set counter + article_max to limit the number of articles
+counter = 0
+article_max = 10
+
 # get titles, subtitles, dates and contents for every article
 for link in urls:
+    # limit to 'article_max' articles
+    if counter == article_max:
+        break
 
     r = requests.get("https://www.eltiempo.com/" + link, headers=headers)
     soup = BeautifulSoup(r.text, 'html.parser')
 
     #get title
     title = soup.select_one(".titulo-principal-bk .titulo").get_text()
-    #print(title)
 
     #get subtitle
     subtitle = soup.select_one(".article-epigraph").get_text()
-    #print(subtitle)
     
     #get date  
     date = soup.select(".publishedAt")[2].get_text()
-    print(date)
 
 
     #get content from paragraphs
@@ -54,7 +59,6 @@ for link in urls:
 
     for p in paragraphs:
        content.append(p.get_text())
-    #print(content)
     
     information = {
     'date': date,
@@ -64,6 +68,7 @@ for link in urls:
     }
 
     information_list.append(information)
+    counter += 1
 
 df = pd.DataFrame(information_list)
 
