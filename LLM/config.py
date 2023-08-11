@@ -1,2 +1,2 @@
-public_key = "Public Key"
-private_key = "Private Key"
+public_key = "test"
+private_key = "test"
