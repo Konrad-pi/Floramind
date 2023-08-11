@@ -50,7 +50,7 @@ Based on insightful conversations with local contacts, we have curated a set of 
 3. German Language Reporting: A pivotal component of the project involves generating comprehensive reports in German. These reports will encapsulate the synthesized information, offering a valuable resource for German-speaking stakeholders seeking insights into Colombia's contemporary political landscape.
 
 ### The process
-1. webscraper using bs4: Completed, 4 webscraper completed exporting the top 10 articles to a csv document.
+1. webscraper using bs4: completed, 4 webscraper completed exporting the top 10 articles to a csv document.
 https://cnnespanol.cnn.com/category/zona-andina/colombia/
 https://www.bbc.com/mundo/topics/c404v5gz1rkt
 https://www.eltiempo.com/colombia
