@@ -52,7 +52,7 @@ for link in urls:
     #print(title)
 
     #get subtitle
-    subtitle = soup.select_one(".max-w-\[968px\] .mb-5").get_text()
+    subtitle = soup.select_one("p.mb-4.text-lg").get_text()
     #print(subtitle)
     
     #get date  
@@ -72,6 +72,7 @@ for link in urls:
     'title': title,
     'subtitle': subtitle,
     'content': content,
+    'source': 'semana'
     }
 
 
