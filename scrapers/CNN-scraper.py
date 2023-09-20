@@ -78,6 +78,7 @@ for link in urls:
     'link': link,
     'title': title,
     'content': content,
+    'source': 'cnnespanol'
     }
 
     information_list.append(information)

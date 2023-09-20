@@ -62,10 +62,10 @@ for index, link in enumerate(urls):
     information = {
         'date': dates[index],  # Use the corresponding date
         'link': urls[index],
-        'website': 'BBC_Mundo',
         'title': title,
         'subtitle': subtitle,
         'content': content,
+        'source': 'BBC_Mundo'
     }
 
     information_list.append(information)

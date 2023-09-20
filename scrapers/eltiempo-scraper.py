@@ -73,6 +73,7 @@ for link in urls:
     'title': title,
     'subtitle': subtitle,
     'content': content,
+    'source': 'El Tiempo'
     }
 
     information_list.append(information)
@@ -80,7 +81,6 @@ for link in urls:
 
 df = pd.DataFrame(information_list)
 
-display(df)
 
 # Save the data in a csv file
 current_date = datetime.datetime.now()
