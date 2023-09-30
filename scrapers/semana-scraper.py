@@ -24,7 +24,7 @@ urls = []
 
 # Set counter + article_max to limit the number of articles
 counter = 0
-article_max = 10
+article_max = 5
 
 for article in articles:
     # limit to 'article_max' articles

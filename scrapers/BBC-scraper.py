@@ -20,7 +20,7 @@ articles = soup.find_all(class_="focusIndicatorDisplayBlock bbc-uk8dsi e1d658bg0
 
 # Set counter + article_max to limit the number of articles
 counter = 0
-article_max = 10
+article_max = 5
 
 # Get the URL of every article on the page with attributes a using pandas
 urls = []
@@ -77,3 +77,5 @@ df = pd.DataFrame(information_list)
 current_date = datetime.datetime.now()
 filename =  str(current_date.year) + '-' + str(current_date.month) + '-' + str(current_date.day) + '-' + 'bbcmundo'
 df.to_csv(str(filename + '.csv'))
+
+print("done!")
